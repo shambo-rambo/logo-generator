@@ -1,16 +1,35 @@
 // Packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const { Triangle, Square, Circle } = require("./lib/shapes.js");
 
-// function will take in the answers object and convert it into the README.md file content
+// Function to generate SVG content based on user input
 function generateLogo(answers) {
-    return `
-${answers.letters}
+    let shape;
+    switch (answers.shape) {
+        case 'triangle':
+            shape = new Triangle();
+            break;
+        case 'square':
+            shape = new Square();
+            break;
+        case 'circle':
+            shape = new Circle();
+            break;
+        default:
+            break;
+    }
 
-${answers.colour}
+    shape.setColor(answers.colour);
 
-${answers.shape}
-`;
+    const svgContent = `
+        <svg width="300" height="200">
+            ${shape.render()}
+            <text x="150" y="100" fill="${answers.colour}" text-anchor="middle">${answers.letters}</text>
+        </svg>
+    `;
+
+    return svgContent;
 }
 
 // An array of questions for user input
