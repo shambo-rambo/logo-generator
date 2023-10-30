@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "logo-generator",
   "version": "1.0.0",
   "description": "",
@@ -9,10 +10,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "inquirer": "^9.2.11"
-  },
   "devDependencies": {
     "jest": "^29.7.0"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.4"
   }
 }

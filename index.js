@@ -1,7 +1,7 @@
 // Packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { Triangle, Square, Circle } = require("./lib/shapes.js");
+const { Triangle, Square, Circle } = require("./lib/shapes");
 
 // Function to generate SVG content based on user input
 function generateLogo(answers) {
@@ -48,7 +48,7 @@ const questions = [
     {
         type: 'input',
         name: 'colour',
-        message: 'Please choose a colour using a hexadecimal number.',
+        message: 'Please choose a colour or use a hexadecimal number.',
     },
     {
         type: 'list',
