@@ -20,17 +20,24 @@ function generateLogo(answers) {
             break;
     }
 
-    shape.setColor(answers.colour);
+    shape.setColor(answers.shapeColour);
+    
+    const centroid = shape.getCentroid();
 
     const svgContent = `
-        <svg width="300" height="200">
-            ${shape.render()}
-            <text x="150" y="100" fill="${answers.colour}" text-anchor="middle">${answers.letters}</text>
+        <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+            <g>
+                ${shape.render()}
+                <text x="${centroid.x}" y="${centroid.y}" text-anchor="middle" font-size="40" fill="${answers.textColour}">${answers.letters}</text>
+            </g>
         </svg>
     `;
 
     return svgContent;
 }
+
+// ... [Rest of the code]
+
 
 // An array of questions for user input
 const questions = [
@@ -47,8 +54,13 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'colour',
-        message: 'Please choose a colour or use a hexadecimal number.',
+        name: 'textColour',
+        message: 'Please choose a text colour or use a hexadecimal number.',
+    },
+    {
+        type: 'input',
+        name: 'shapeColour',
+        message: 'Please choose a background colour or use a hexadecimal number.',
     },
     {
         type: 'list',
