@@ -1,7 +1,7 @@
 // Packages needed for this application
-const inquirer = require('inquirer');
-const fs = require('fs');
-const { Triangle, Square, Circle } = require("./lib/shapes");
+import inquirer from 'inquirer';
+import fs from 'fs';
+import { Triangle, Square, Circle } from './lib/shapes.js'; 
 
 // Function to generate SVG content based on user input
 function generateLogo(answers) {

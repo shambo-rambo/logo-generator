@@ -1,0 +1,6 @@
+
+        <svg width="300" height="200">
+            <circle cx="150" cy="100" r="50" fill="red" />
+            <text x="150" y="100" fill="red" text-anchor="middle">fuk</text>
+        </svg>
+    
